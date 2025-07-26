@@ -32232,7 +32232,7 @@
     function Skill(props) {
         return y('div', { class: `skill ${ classnames[skill_data_default[props.id].rarity] } ${ props.selected ? 'selected' : '' }` }, y('img', {
             class: 'skillIcon',
-            src: `/uma-tools/icons/${ skill_meta_default[props.id].iconId }.png`
+            src: `/docs/icons/${ skill_meta_default[props.id].iconId }.png`
         }), y('span', { class: 'skillName' }, y(Text, { id: `skillnames.${ props.id }` })));
     }
     var iconIdPrefixes = Object.freeze({
@@ -32401,7 +32401,7 @@
             return y('button', {
                 'data-filter': props2.type,
                 class: `iconFilterButton ${ active[props2.group][props2.type] ? 'active' : '' }`,
-                style: `background-image:url(/uma-tools/icons/${ props2.type }1.png)`
+                style: `background-image:url(/docs/icons/${ props2.type }1.png)`
             });
         }
         const items = ids.map(id => y('li', {

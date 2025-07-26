@@ -209,7 +209,7 @@ const classnames = Object.freeze(['', 'skill-white', 'skill-gold', 'skill-unique
 export function Skill(props) {
 	return (
 		<div class={`skill ${classnames[skills[props.id].rarity]} ${props.selected ? 'selected' : ''}`} data-skillid={props.id}>
-			<img class="skillIcon" src={`/uma-tools/icons/${skillmeta(props.id).iconId}.png`} /> 
+			<img class="skillIcon" src={`/docs/icons/${skillmeta(props.id).iconId}.png`} /> 
 			<span class="skillName"><Text id={`skillnames.${props.id}`} /></span>
 			{props.dismissable && <span class="skillDismiss">✕</span>}
 		</div>
@@ -387,7 +387,7 @@ export function ExpandedSkillDetails(props) {
 		<IntlProvider definition={lang == 'ja' ? STRINGS_ja : STRINGS_en}>
 			<div class={`expandedSkill ${classnames[skill.rarity]}`} data-skillid={props.id}>
 				<div class="expandedSkillHeader">
-					<img class="skillIcon" src={`/uma-tools/icons/${skillmeta(props.id).iconId}.png`} />
+					<img class="skillIcon" src={`/docs/icons/${skillmeta(props.id).iconId}.png`} />
 					<span class="skillName"><Text id={`skillnames.${props.id}`} /></span>
 					{props.dismissable && <span class="skillDismiss">✕</span>}
 				</div>
@@ -572,7 +572,7 @@ export function SkillList(props) {
 	}
 	
 	function IconFilterButton(props) {
-		return <button data-filter={props.type} class={`iconFilterButton ${active[props.group][props.type] ? 'active': ''}`} style={`background-image:url(/uma-tools/icons/${props.type}1.png)`}></button>
+		return <button data-filter={props.type} class={`iconFilterButton ${active[props.group][props.type] ? 'active': ''}`} style={`background-image:url(/docs/icons/${props.type}1.png)`}></button>
 	}
 
 	const items = props.ids.map(id => <li key={id} class={visible.has(id) ? '' : 'hidden'}><Skill id={id} selected={selectedMap.get(skillmeta(id).groupId) == id} /></li>);

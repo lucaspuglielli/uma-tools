@@ -29,7 +29,7 @@ function searchNames(query) {
 }
 
 export function UmaSelector(props) {
-	const randomMob = useMemo(() => `/uma-tools/icons/mob/trained_mob_chr_icon_${8000 + Math.floor(Math.random() * 624)}_000001_01.png`, []);
+	const randomMob = useMemo(() => `/docs/icons/mob/trained_mob_chr_icon_${8000 + Math.floor(Math.random() * 624)}_000001_01.png`, []);
 	const u = props.value && umas[props.value.slice(0,4)];
 
 	const input = useRef(null);
@@ -99,7 +99,7 @@ export function UmaSelector(props) {
 		<div class="umaSelector">
 			<div class="umaSelectorIconsBox" onClick={focus}>
 				<img src={props.value ? icons[props.value] : randomMob} />
-				<img src="/uma-tools/icons/utx_ico_umamusume_00.png" />
+				<img src="/docs/icons/utx_ico_umamusume_00.png" />
 			</div>
 			<div class="umaEpithet"><span>{props.value && u.outfits[props.value]}</span></div>
 			<div class="umaSelectWrapper">
@@ -139,7 +139,7 @@ function rankForStat(x: number) {
 export function Stat(props) {
 	return (
 		<div class="horseParam">
-			<img src={`/uma-tools/icons/statusrank/ui_statusrank_${(100 + rankForStat(props.value)).toString().slice(1)}.png`} />
+			<img src={`/docs/icons/statusrank/ui_statusrank_${(100 + rankForStat(props.value)).toString().slice(1)}.png`} />
 			<input type="number" min="1" max="2000" value={props.value} tabindex={props.tabindex} onInput={(e) => props.change(+e.currentTarget.value)} />
 		</div>
 	);
@@ -148,7 +148,7 @@ export function Stat(props) {
 const APTITUDES = Object.freeze(['S','A','B','C','D','E','F','G']);
 export function AptitudeIcon(props) {
 	const idx = 7 - APTITUDES.indexOf(props.a);
-	return <img src={`/uma-tools/icons/utx_ico_statusrank_${(100 + idx).toString().slice(1)}.png`} />;
+	return <img src={`/docs/icons/utx_ico_statusrank_${(100 + idx).toString().slice(1)}.png`} />;
 }
 
 export function AptitudeSelect(props){
@@ -290,11 +290,11 @@ export function HorseDef(props) {
 			<div class="horseDefHeader">{props.children}</div>
 			<UmaSelector value={umaId} select={setUma} tabindex={tabnext()} />
 			<div class="horseParams">
-				<div class="horseParamHeader"><img src="/uma-tools/icons/status_00.png" /><span>Speed</span></div>
-				<div class="horseParamHeader"><img src="/uma-tools/icons/status_01.png" /><span>Stamina</span></div>
-				<div class="horseParamHeader"><img src="/uma-tools/icons/status_02.png" /><span>Power</span></div>
-				<div class="horseParamHeader"><img src="/uma-tools/icons/status_03.png" /><span>Guts</span></div>
-				<div class="horseParamHeader"><img src="/uma-tools/icons/status_04.png" /><span>{CC_GLOBAL?'Wit':'Wisdom'}</span></div>
+				<div class="horseParamHeader"><img src="/docs/icons/status_00.png" /><span>Speed</span></div>
+				<div class="horseParamHeader"><img src="/docs/icons/status_01.png" /><span>Stamina</span></div>
+				<div class="horseParamHeader"><img src="/docs/icons/status_02.png" /><span>Power</span></div>
+				<div class="horseParamHeader"><img src="/docs/icons/status_03.png" /><span>Guts</span></div>
+				<div class="horseParamHeader"><img src="/docs/icons/status_04.png" /><span>{CC_GLOBAL?'Wit':'Wisdom'}</span></div>
 				<Stat value={state.speed} change={setter('speed')} tabindex={tabnext()} />
 				<Stat value={state.stamina} change={setter('stamina')} tabindex={tabnext()} />
 				<Stat value={state.power} change={setter('power')} tabindex={tabnext()} />

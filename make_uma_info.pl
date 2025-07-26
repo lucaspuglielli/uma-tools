@@ -83,7 +83,7 @@ while ($select_umas->fetch) {
 		}
 		$umas->{$id} = {name => [Encode::decode('utf8', $ja_name), $en_name], outfits => {}};
 		my $base = basename($icon_path);  # tehe
-		$icons->{$id} = "/uma-tools/icons/chara/$base.png";
+		$icons->{$id} = "/docs/icons/chara/$base.png";
 
 		$icon_hash =~ /^(..)/;
 		my $hdir = $1;
@@ -108,7 +108,7 @@ while ($select_umas->fetch) {
 	while ($select_trained_icon->fetch) {
 		next if $icons->{$outfit_ids[$i++]};
 		my $base = basename($icon_path);
-		$icons->{$outfit_ids[$i - 1]} = "/uma-tools/icons/chara/$base.png";
+		$icons->{$outfit_ids[$i - 1]} = "/docs/icons/chara/$base.png";
 
 		$icon_hash =~ /^(..)/;
 		my $hdir = $1;
